@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registro como proveedor</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="barra">
+      <div>
+        <p class="marca">Periferia · administración</p>
+        <h1>Registro como proveedor</h1>
+      </div>
+      <p id="salud" class="salud">Comprobando el servicio…</p>
+    </header>
+    <main>
+      <section class="casos" aria-label="Casos de ejemplo">
+        <button type="button" data-caso="ec-corp-andina">Corporación Andina · PDF</button>
+        <button type="button" data-caso="co-industrias-delta">Industrias Delta · Excel</button>
+        <button type="button" data-caso="hn-agroexport-sula">Agroexport Sula · Excel</button>
+        <button type="button" data-caso="pa-logistica-istmo">Logística del Istmo · portal</button>
+        <button type="button" id="nueva">Nueva sesión</button>
+      </section>
+      <p id="aviso" class="aviso" hidden></p>
+      <ol id="historial" class="historial" aria-live="polite"></ol>
+      <form id="formulario">
+        <label for="mensaje">Mensaje para el agente</label>
+        <textarea id="mensaje" name="mensaje" rows="3" placeholder="Procesa el caso que recibió recepción…" required></textarea>
+        <div class="acciones">
+          <button type="submit" id="enviar">Enviar</button>
+          <p id="estado" class="estado" hidden>Consultando herramientas…</p>
+        </div>
+      </form>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

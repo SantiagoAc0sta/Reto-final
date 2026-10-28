@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: registro-proveedor
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: openrouter/free
+      - key: LLM_PROVIDER
+        value: openrouter
+      - key: LLM_TIMEOUT_MS
+        value: "90000"
+      - key: MAX_ITERACIONES
+        value: "25"
+      - key: MAX_TOKENS_SESION
+        value: "80000"
+      - key: MAX_TOKENS_RESPUESTA
+        value: "2048"
