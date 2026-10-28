@@ -72,6 +72,8 @@ El blueprint está en `render.yaml` y la imagen en `Dockerfile`. Render inyecta 
 3. Cuando pida `OPENROUTER_API_KEY`, pega la clave de OpenRouter.
 4. Al terminar, la URL pública es la del servicio, del tipo `https://registro-proveedor.onrender.com`. El chequeo de salud es `/api/health`.
 
+Si el despliegue dice `No such file or directory: 'requirements.txt'`, Render creó el servicio como Python. Este proyecto no usa pip. En el servicio, abre **Settings**, cambia **Language** a **Docker**, deja **Dockerfile Path** en `./Dockerfile`, borra el comando de build `pip install -r requirements.txt` y vuelve a desplegar. También puedes borrar ese servicio y crearlo de nuevo con **Blueprint**, que ya declara `runtime: docker`.
+
 En el plan gratuito el servicio se duerme si nadie entra, y `out/` se borra en cada despliegue o reinicio. Las sesiones y los formularios generados no persisten.
 
 ## Fixtures

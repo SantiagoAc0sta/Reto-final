@@ -2,8 +2,10 @@ services:
   - type: web
     name: registro-proveedor
     runtime: docker
+    env: docker
     plan: free
     dockerfilePath: ./Dockerfile
+    dockerContext: .
     healthCheckPath: /api/health
     envVars:
       - key: OPENROUTER_API_KEY
